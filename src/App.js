@@ -12,7 +12,6 @@ const style = {
 
 const App = () => {
   const [user]=useAuthState(auth)
-  console.log(user)
   return (
     <div className={style.appContainer}>
     <section className={style.sectionContainer}>
