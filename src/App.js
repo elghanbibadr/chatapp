@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './componenet/Navbar';
-
+import { auth } from './firebase';
+import {useAuthState} from "react-firebase-hooks/auth"
 
 const style = {
   appContainer: `max-w-[728px] mx-auto text-center`,
@@ -9,6 +10,8 @@ const style = {
 
 
 const App = () => {
+  const [user]=useAuthState(auth)
+  console.log(user)
   return (
     <div className={style.appContainer}>
     <section className={style.sectionContainer}>
