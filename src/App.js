@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './componenet/Navbar';
 import { auth } from './firebase';
+import Chat from './componenet/Chat';
 import {useAuthState} from "react-firebase-hooks/auth"
 
 const style = {
@@ -17,6 +18,7 @@ const App = () => {
     <section className={style.sectionContainer}>
       {/* Navbar */}
       <Navbar  user={user}/>
+     <Chat />
     </section>
   </div>
   )
