@@ -9,9 +9,14 @@ const style = {
 };
 
 const Message = ({message}) => {
+  console.log(message)
+  const messageClass = 
+  message.uid === auth.currentUser.uid
+  ? `${style.sent}`
+  : `${style.received}`
   return (
     <div>
-        <div className={style.message}>
+        <div className={`${style.message} ${messageClass}`} >
             <p className={style.name}>Dave</p>
             <p>{message.text}</p>
 

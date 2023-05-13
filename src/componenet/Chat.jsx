@@ -1,6 +1,6 @@
 import React ,{useState,useEffect,useRef} from 'react'
 import Message from './Message';
-import { collection,getDocs,onSnapshot } from 'firebase/firestore';
+import { collection,onSnapshot } from 'firebase/firestore';
 import SendMessage from './SendMessage';
 import { db } from '../firebase';
 
@@ -12,18 +12,7 @@ const Chat = () => {
     const [messages,setMessages]=useState([])
     const scroll = useRef();
 
-  // useEffect((() =>{
-  //     async function fetchData() {
-  //         const querySnapshot = await getDocs(collection(db,'messages'));
-  //         let messgae=[]
-  //         querySnapshot.forEach((doc) => {
-  //         messgae.push({...doc.data(),id:doc.id})
-  //         });
-  //         setMessages(messgae)
-  //       }
-        
-  //     fetchData();
-  // }),[])
+
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'messages'), (querySnapshot) => {
       const messages = [];
