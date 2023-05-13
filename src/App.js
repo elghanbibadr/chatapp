@@ -17,7 +17,7 @@ const App = () => {
     <section className={style.sectionContainer}>
       {/* Navbar */}
       <Navbar  user={user}/>
-     <Chat />
+      {user ? <Chat /> : null} 
     </section>
   </div>
   )
